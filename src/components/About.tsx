@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef, ReactNode, useState } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { useRef, ReactNode } from 'react';
+import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 
 const ScrollReveal = ({
@@ -40,8 +40,6 @@ const ScrollReveal = ({
 };
 
 export default function About() {
-  const [showPhoto, setShowPhoto] = useState(true);
-
   return (
     <section id="about" className="py-28 px-6 md:px-12 max-w-6xl mx-auto text-gray-300 scroll-mt-20">
       <ScrollReveal>
@@ -51,64 +49,32 @@ export default function About() {
       </ScrollReveal>
 
       <div className="flex flex-col md:flex-row gap-16 items-center">
-        {/* Left: Avatar Toggle */}
+        {/* Left: Avatar */}
         <ScrollReveal delay={0.15} direction="left">
           <div className="relative group w-64 h-64 md:w-80 md:h-80">
             {/* Gradient Border & Rotation */}
-            <div 
-              className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00ff88] to-blue-500 p-[2px] transform rotate-6 transition-all duration-700 group-hover:rotate-0 group-hover:scale-105 cursor-pointer shadow-2xl"
-              onClick={() => setShowPhoto(!showPhoto)}
-            >
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00ff88] to-blue-500 p-[2px] transform rotate-6 transition-all duration-700 group-hover:rotate-0 group-hover:scale-105 shadow-2xl">
               <div className="w-full h-full bg-[#0a0a0a] rounded-[14px] flex items-center justify-center relative overflow-hidden group/inner">
                 
-                <AnimatePresence mode="wait">
-                  {showPhoto ? (
-                    <motion.div
-                      key="photo"
-                      initial={{ opacity: 0, filter: 'blur(10px)' }}
-                      animate={{ opacity: 1, filter: 'blur(0px)' }}
-                      exit={{ opacity: 0, filter: 'blur(10px)' }}
-                      transition={{ duration: 0.4 }}
-                      className="w-full h-full relative"
-                    >
-                      <Image
-                        src="/profile.png"
-                        alt="Raj Anand"
-                        fill
-                        sizes="(max-width: 768px) 256px, 320px"
-                        priority
-                        className="object-cover opacity-80 group-hover/inner:opacity-100 transition-all duration-500 grayscale group-hover/inner:grayscale-0"
-                      />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="terminal"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.8 }}
-                      transition={{ duration: 0.3 }}
-                      className="flex flex-col items-center justify-center text-[#00ff88]"
-                    >
-                      <span className="font-mono text-6xl md:text-7xl flex items-center shadow-[#00ff88]/50 drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">
-                        &gt;_
-                      </span>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                {/* Click hint overlay */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover/inner:opacity-100 transition-opacity duration-300 flex items-center justify-center font-mono text-sm text-[#00ff88] backdrop-blur-sm pointer-events-none">
-                  [ click to toggle ]
+                <div className="w-full h-full relative">
+                  <Image
+                    src="/profile2.jpg"
+                    alt="Raj Anand"
+                    fill
+                    sizes="(max-width: 768px) 256px, 320px"
+                    priority
+                    className="object-cover opacity-80 group-hover/inner:opacity-100 transition-all duration-500 grayscale group-hover/inner:grayscale-0"
+                  />
                 </div>
 
               </div>
             </div>
 
             {/* Code Brackets Decoration */}
-            <div className="absolute -left-6 -top-6 text-4xl font-mono text-white/5 group-hover:text-[#00ff88]/20 transition-colors duration-700">
+            <div className="absolute -left-6 -top-6 text-4xl font-mono text-white/5 group-hover:text-[#00ff88]/20 transition-colors duration-700 pointer-events-none">
               &lt;
             </div>
-            <div className="absolute -right-6 -bottom-6 text-4xl font-mono text-white/5 group-hover:text-[#00ff88]/20 transition-colors duration-700">
+            <div className="absolute -right-6 -bottom-6 text-4xl font-mono text-white/5 group-hover:text-[#00ff88]/20 transition-colors duration-700 pointer-events-none">
               /&gt;
             </div>
           </div>
