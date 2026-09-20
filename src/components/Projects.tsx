@@ -4,6 +4,14 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
+    title: 'SupportSense — Agentic Customer Support Pipeline',
+    description:
+      "An end-to-end agentic AI support pipeline built on 2.8M real AmazonHelp tweets. Uses a RAG few-shot classifier with ChromaDB to achieve 63.6% intent accuracy (Macro F1: 0.670). Features an 8-criteria escalation engine with 99.2% recall (F1: 0.742) and a rigorous LLM-as-judge evaluation framework with bootstrap 95% CIs and Cohen's κ inter-rater agreement.",
+    tech: ['Python', 'ChromaDB', 'Groq LLM', 'RAG', 'Gradio'],
+    github: 'https://github.com/Raj6571Anand/SupportSense-Agentic-Customer-Support',
+    demo: '',
+  },
+  {
     title: 'Smart API Rate Limiter & Gateway',
     description:
       'A robust API gateway implementing 5 distinct rate-limiting algorithms (Token Bucket, Sliding Window, Fixed Window, Leaky Bucket) with tiered API key authentication, async SQLAlchemy, Redis with auto in-memory fallback, real-time analytics dashboard, and 100% test coverage across 26 tests.',
@@ -20,19 +28,19 @@ const projects = [
     demo: '',
   },
   {
-    title: 'Recipe Book',
-    description:
-      'A modern Flutter recipe app integrating TheMealDB API with smart filtering by category and cuisine, detailed recipe views, random recommendations, and persistent favorites via Sqflite. Built with Riverpod state management, Clean Architecture (SOLID), Hero animations, shimmer loading, and responsive grid/list toggle.',
-    tech: ['Flutter', 'Dart', 'Riverpod', 'Sqflite', 'Clean Architecture'],
-    github: 'https://github.com/Raj6571Anand/Recipe_Book',
-    demo: '',
-  },
-  {
     title: 'Huffman File Compressor',
     description:
       'A mobile tool demonstrating practical DSA by implementing lossless file compression using Huffman Coding. Engineered compression and decompression from scratch — character frequency analysis, Huffman tree construction via priority queue, binary code generation, and .huff file I/O with compression analytics.',
     tech: ['Dart', 'DSA', 'Huffman Coding', 'File I/O'],
     github: 'https://github.com/Raj6571Anand/Huffman-File-Compressor',
+    demo: '',
+  },
+  {
+    title: 'Recipe Book',
+    description:
+      'A modern Flutter recipe app integrating TheMealDB API with smart filtering by category and cuisine, detailed recipe views, random recommendations, and persistent favorites via Sqflite. Built with Riverpod state management, Clean Architecture (SOLID), Hero animations, shimmer loading, and responsive grid/list toggle.',
+    tech: ['Flutter', 'Dart', 'Riverpod', 'Sqflite', 'Clean Architecture'],
+    github: 'https://github.com/Raj6571Anand/Recipe_Book',
     demo: '',
   },
   {
